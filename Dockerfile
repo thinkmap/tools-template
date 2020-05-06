@@ -8,7 +8,8 @@ RUN apk update --no-cache && apk upgrade --no-cache
 RUN apk --no-cache add tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
-RUN apk add --update --no-cache curl openssh vim wget bash python3 && rm -rf /var/cache/apk/*
+# 安装常用软件
+RUN apk add --update --no-cache curl openssh vim wget bash python3 go php7 openjdk11 && rm -rf /var/cache/apk/*
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && rc-service sshd restart
 COPY entrypoint.sh /
 CMD ["curl"]
