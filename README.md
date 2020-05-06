@@ -1,6 +1,5 @@
 # tools-curl
-docker curl wget vim tools images
-Alpine-based image with just curl
+Alpine-based image with just curl wget vim
 
 ## Usage
 
