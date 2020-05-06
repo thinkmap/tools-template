@@ -1,4 +1,4 @@
-FROM alpine:3.11.5
+FROM alpine:3.11.6
 RUN apk update --no-cache && apk upgrade --no-cache
 RUN apk --no-cache add tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
