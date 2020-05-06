@@ -23,7 +23,7 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config && 
 # rc-service sshd restart
 COPY entrypoint.sh /
 RUN cd / && chmod +x entrypoint.sh
-CMD ["ssh","wget","curl"]
+CMD ["curl"]
 # 开放22端口
 EXPOSE 22
 # 执行ssh启动命令
