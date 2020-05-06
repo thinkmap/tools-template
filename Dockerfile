@@ -28,4 +28,4 @@ CMD ["ssh","wget","curl"]
 EXPOSE 22
 # 执行ssh启动命令
 CMD ["/usr/sbin/sshd", "-D"]
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
