@@ -13,5 +13,6 @@ RUN apk add --update --no-cache curl openssh vim wget bash python3 go php7 openj
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config 
 # rc-service sshd restart
 COPY entrypoint.sh /
+RUN cd / && chmod +x entrypoint.sh
 CMD ["ssh","wget","curl"]
 ENTRYPOINT ["/entrypoint.sh"]
